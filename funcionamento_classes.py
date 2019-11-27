@@ -87,7 +87,7 @@ class Classe:
         print('classe carregada em memoria...')
 
 
-#Classe()
+Classe()
 
 '''------------------------------------------------------------'''
 
@@ -104,7 +104,7 @@ class Classe2:
         print('metodo acionado...')
 
 '''Vai chamar o construtor automaticamente e tambem o metodo'''
-#Classe2().metodo()
+Classe2().metodo()
 
 '''------------------------------------------------------------'''
 
@@ -135,5 +135,50 @@ class Classe:
 Classe('Aprendendo POO em Python').metodo()
 
 '''------------------------------------------------------------'''
+
+'''
+Metodo destrutor - sera acionado toda vez que a classe
+for descarregada da memoria.
+
+Boas praticas de programacao:
+- O construtor deve ser definido no inicio da classe
+- O destrutor deve ser definido no final da classe.
+'''
+# exemplo 01
+class Classe:
+    def __del__(self):
+        print('classe descarregada da memoria')
+
+
+c = Classe()
+del c
+
+# exemplo 02
+class Classe2:
+    def metodo(self):
+        print('metodo executado')
+
+    def __del__(self):
+        print('classe descarregada da memoria')
+
+d = Classe2()
+d.metodo()
+del d
+
+# exemplo 03
+class Classe3:
+    def __init__(self):
+        print('classe carregada na memoria')
+
+    def metodo(self):
+        print('O metodo foi executado com sucesso')
+
+    def __del__(self):
+        print('classe descarregada da memoria')
+
+e = Classe3()
+e.metodo()
+del e
+
 
 
