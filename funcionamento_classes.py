@@ -143,6 +143,8 @@ for descarregada da memoria.
 Boas praticas de programacao:
 - O construtor deve ser definido no inicio da classe
 - O destrutor deve ser definido no final da classe.
+
+para descarregar uma classe use o del.
 '''
 # exemplo 01
 class Classe:
@@ -151,6 +153,7 @@ class Classe:
 
 
 c = Classe()
+# descarrega a classe da memoria.
 del c
 
 # exemplo 02
@@ -163,6 +166,7 @@ class Classe2:
 
 d = Classe2()
 d.metodo()
+# descarrega a classe da memoria.
 del d
 
 # exemplo 03
@@ -178,6 +182,7 @@ class Classe3:
 
 e = Classe3()
 e.metodo()
+# descarrega a classe da memoria.
 del e
 
 
