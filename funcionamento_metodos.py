@@ -117,8 +117,15 @@ class Classe8:
 k = Classe8()
 k.metodo2('mensagem 1', 'mensagem 2')
 
+'''____________________________________________________________________________'''
 
+# Usando parametros com valores/argumentos padrao
+class Padrao:
+    def metodo(self, msg='valor default'):
+        print(msg)
 
-
-
+p = Padrao()
+p.metodo()
+p.metodo('eu passei esse valor')
+# caso eu nao passe nenhum valor o 'valor default' seria impresso.
 
