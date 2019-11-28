@@ -44,7 +44,7 @@ Classe3.metodo(None) # nesse caso passamos o None mas poderia ser outro valor.
 
 '''____________________________________________________________________________'''
 
-'''Podemos passar 2 ou mais argumentos para o metodo sem problemas '''
+'''Podemos passar 2 ou mais parametros para o metodo sem problemas '''
 # Exemplo 04
 class Classe4:
     def metodo(self, msg1, msg2):
@@ -53,6 +53,9 @@ class Classe4:
 
 f = Classe4()
 f.metodo('Estou aprendendo python', 'Eu sou um hacker')
+
+#Obs: podemos passar os fora de ordem desde que os nomeemos
+f.metodo(msg2='mensagem 2', msg1='mensagem 1')
 
 '''____________________________________________________________________________'''
 
