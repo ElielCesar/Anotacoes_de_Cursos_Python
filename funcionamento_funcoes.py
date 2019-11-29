@@ -35,4 +35,26 @@ print(d.subtracao(5, 2))
 print(d.multiplicar(3, 3))
 print(d.dividir(9, 3))
 
-'''_______________________________________________________'''
+
+# é possivel fazer o mesmo exemplo acima com menos linhas de codigo
+# ficando assim o codigo final
+
+# Exemplo 02
+class Calculadora:
+    def somar(self, n1, n2): return n1 + n2
+
+    def subtracao(self, n1, n2): return n1 - n2
+
+    def dividir(self, n1, n2): return n1 / n2
+    
+    def multiplicar(self, n1, n2): return n1 * n2
+        
+d = Calculadora()
+print(d.somar(2, 2))
+print(d.subtracao(5, 2))
+print(d.multiplicar(3, 3))
+print(d.dividir(9, 3))
+
+
+
+
