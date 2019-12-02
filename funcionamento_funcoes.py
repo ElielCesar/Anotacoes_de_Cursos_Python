@@ -38,7 +38,6 @@ print(d.dividir(9, 3))
 
 # é possivel fazer o mesmo exemplo acima com menos linhas de codigo
 # ficando assim o codigo final
-
 # Exemplo 02
 class Calculadora:
     def somar(self, n1, n2): return n1 + n2
@@ -52,6 +51,17 @@ print(d.subtracao(5, 2))
 print(d.multiplicar(3, 3))
 print(d.dividir(9, 3))
 
+'''_______________________________________________________'''
 
+# Chamando funcoes dentro de funcoes.
+class Classe:
+    def funcao1(self):
+        return 'retorno da funcao 1'
+
+    def funcao2(self):
+        return self.funcao1()
+
+c = Classe()
+print(c.funcao2())
 
 
