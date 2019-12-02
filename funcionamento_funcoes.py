@@ -64,4 +64,16 @@ class Classe:
 c = Classe()
 print(c.funcao2())
 
+# outro exemplo agora passando agurmentos para os parametros
+class Classe2:
+    def funcao1(self, msg):
+        return 'mensagem recebida: ' + msg
+
+    def funcao2(self, msg):
+        return self.funcao1(msg)
+
+c = Classe2()
+print(c.funcao2('estou aprendendo python em 2019'))
+
+
 
