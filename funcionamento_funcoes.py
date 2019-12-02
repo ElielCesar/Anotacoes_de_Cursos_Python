@@ -42,11 +42,8 @@ print(d.dividir(9, 3))
 # Exemplo 02
 class Calculadora:
     def somar(self, n1, n2): return n1 + n2
-
     def subtracao(self, n1, n2): return n1 - n2
-
     def dividir(self, n1, n2): return n1 / n2
-    
     def multiplicar(self, n1, n2): return n1 * n2
         
 d = Calculadora()
