@@ -24,3 +24,32 @@ print('filhos')
 
 for f in filhos:
     print(f)
+
+ '''_____________________________________________'''
+
+# Exemplo 02 - mesma coisa do exemplo 01
+class Linguagens:
+    nomes = ['C', 'C++', 'Java', 'Python', 'Java Script', 'Ruby']
+
+class Profissional:
+    nome = 'Eliel Cesar'
+    idade = 27
+    salario = 3500.00
+    sexo = 'M'
+    habilidades = Linguagens()
+
+p = Profissional()
+nome = p.nome
+idade = p.idade
+salario = p.salario
+sexo = p.sexo
+habilidades = p.habilidades.nomes
+
+print('Informacoes profissionais:')
+print(f'Nome: {nome}')
+print(f'idade: {idade}')
+print(f'salario: {salario}')
+print(f'sexo: {sexo}')
+print(f'Habilidades:')
+for h in habilidades:
+    print(h)
