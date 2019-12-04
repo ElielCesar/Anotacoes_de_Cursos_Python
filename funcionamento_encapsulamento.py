@@ -90,3 +90,68 @@ print(obj.atributo_publico)
 print(obj.funcao_publica())
 obj.metodo_publico()
 
+'''_______________________________________________________________'''
+
+
+'''
+Encapsulamento privado:
+os recursos privados nao podem ser acessados por meio
+de instanciacoes, objetos ou classes filhas pois o proprio 
+interpretador do python vai barrar tal acao.
+
+Sao acessiveis somente dentro da propria classe que o declarou.
+para definir como privado use dois underlines __atributo
+'''
+
+class Classe:
+    __atributo_privado = 'atributo privado'
+
+    def __metodo_privado(self):
+        print('metodo privado')
+
+    def __funcao_privado(self):
+        return 'funcao privada'
+
+
+# Instanciando o objeto
+obj = Classe()
+
+# Forma Incorreta de fazer
+obj.__metodo_privado()        # o proprio interpretador impede o acesso com erro.
+print(obj.__atributo_privado) # o proprio interpretador impede o acesso com erro.
+print(obj.__funcao_publica()) # o proprio interpretador impede o acesso com erro.
+
+
+# FORMA CORRETA DE ACESSAR ATRIBUTOS, METODOS E FUNCOES PRIVADAS
+class Classe:
+    __atributo_privado = 'atributo privado'
+
+    atributo_publico = __atributo_privado # definir um publico que acessa o privado
+
+    def __metodo_privado(self):
+        print('metodo privado')
+
+    def metodo_publico(self): # definir um publico que acessa o privado
+        self.__metodo_privado()
+
+    def __funcao_privado(self):
+        return 'funcao privada'
+
+    def funcao_publica(self): # definir um publico que acessa o privado
+        return self.__funcao_privado()
+
+
+# Instanciando o objeto
+obj = Classe()
+
+obj.metodo_publico()
+print(obj.atributo_publico)
+print(obj.funcao_publica())
+
+
+
+
+
+
+
+
