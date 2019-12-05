@@ -41,7 +41,48 @@ d.metodo() # vai buscar o metodo da classe filha
 
 
 
+# Exemplo 02 - Buscando os recursos da classe Base coo Super()
+class Base:
+    atributo = 'atributo da base'
 
+    def __init__(self):
+        print('construtor da base')
+
+    def metodo(self):
+        print('metodo da base')
+
+    def funcao(self):
+        return 'funcao da base'
+
+    def __del__(self):
+        print('destrutor da base')
+
+
+class Derivada(Base):
+    # Fora dos metodos e funcoes nao se usa o Super(), entao a referencia deve ser direta.
+    atributo = Base.atributo # vai buscar da classe Base
+
+     # super() eh uma funcao pra trabalhar com polimorfismo
+    def __init__(self):
+        super().__init__() # vai chamar o construtor da classe Base
+        print('construtor da derivada')
+
+    def metodo(self):
+        super().metodo() # vai chamar o metodo da classe Base
+        print('metodo da derivada')
+
+    def funcao(self):
+        print(super().funcao()) # vai chamar a funcao da classe Base
+        return 'funcao da derivada'
+
+    def __del__(self):
+        print('destrutor da derivada')
+
+
+d = Derivada()
+print(d.atributo)
+print(d.funcao())
+d.metodo()
 
 
 
