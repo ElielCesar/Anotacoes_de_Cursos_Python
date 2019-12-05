@@ -85,6 +85,27 @@ print(d.funcao())
 d.metodo()
 
 
+'''____________________________________________________________________'''
+
+# Exemplo 03
+class Pai:
+    def metodo(self):
+        print('metodo do pai')
+
+class Filho(Pai):
+    def metodo(self):
+        print('metodo do filho')
+
+    def metodo_principal(self):
+        super().metodo() # vai chamar o metodo do pai que tem o mesmo nome.
+        # para usar um recurso dentro da mesma classe use o self.
+        self.metodo()  # vai chamar o metodo do filho.
+
+f = Filho()
+f.metodo_principal()
+
+
+
 
 
 
