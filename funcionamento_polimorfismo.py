@@ -104,15 +104,30 @@ class Filho(Pai):
 f = Filho()
 f.metodo_principal()
 
+'''____________________________________________________________________'''
 
+# Exemplo 04
+class Pai:
+    atributo = 'atributo do pai'
 
+    def metodo(self):
+        print('metodo do pai')
 
+    def funcao(self):
+        return 'funcao do pai'
 
+class Filho(Pai):
+    atributo = Pai.atributo
 
+    def metodo(self):
+        super().metodo() # chama o metodo do Pai
 
+    def funcao(self):
+        return super().funcao() # chama a funcao do Pai
 
-
-
-
+f = Filho()
+print(f.atributo)
+print(f.funcao())
+f.metodo()
 
 
