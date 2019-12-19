@@ -47,38 +47,34 @@ class Conta:
     se fosse chamar um atributo privado tipo um get e @atributo.setter para setar um valor ao atributo privado
     '''
     # vou usar funcoes ao inves de metodos aqui apenas por conveniencia.
-    
-    #Ambas as versoes abaixo fazem a mesma coisa, apenas escrito de forma diferente.
-    
-    #def get_titular(self):
+
+    # Ambas as versoes abaixo fazem a mesma coisa, apenas escrito de forma diferente.
+
+    # def get_titular(self):
     #   return self.__titular
-    
+
     @property
     def titular(self):
         return self.__titular
-'''-------------------------------------------------------------------------'''
 
-    #def get_saldo(self):
+    # def get_saldo(self):
     #   return self.__saldo
 
     @property
     def saldo(self):
         return self.__saldo
-'''-------------------------------------------------------------------------'''
-    
+
     @property  # estou chamando um metodo com o mesmo nome do atributo.
     def limite(self):
         return self.__limite
-    
-'''-------------------------------------------------------------------------'''
 
-    #def set_limite(self, novo_limite):
+    # def set_limite(self, novo_limite):
     #    self.__limite = novo_limite
 
     @limite.setter  # estou chamando um metodo com o mesmo nome do atributo.
     def limite(self, novo_limite):
         self.__limite = novo_limite
-'''-------------------------------------------------------------------------'''
+
 
 # Instanciando objetos
 c1 = Conta(1, 'Eliel Cesar', 3000, 1000)
@@ -106,8 +102,9 @@ c3 = Conta(3, 'Aline', 1500, 1000)
 
 # testando agora com os decorators acima, para retorno de funcao precisa
 # usar o print, se fosse um metodo nao precisaria.
-print(c1.titular) # executando o @property
+print(c1.titular)  # executando o @property
 print(c1.limite)  # executando o @property
 c1.limite = 2500  # executando o @limite.setter
 print(c1.limite)  # executando o @property
+
 
