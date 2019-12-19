@@ -29,51 +29,39 @@ class Conta:
 
     # metodo
     def transferir(self, destino, valor_transf=0):
-        # veja que o self vale para o objeto instanciado atual
-        self.sacar(valor_transf)
+        self.sacar(valor_transf) # veja que o self vale para o objeto instanciado atual
         destino.depositar(valor_transf)
-        # veja que o self vale para o objeto instanciado atual
-        self.extrato()
+        self.extrato() # veja que o self vale para o objeto instanciado atual
         destino.extrato()
 
-    # Usando a nomeclatura get e set
-    ''' 
-    get e set nao fazem nada de especial, sao apenas convencoes de nomes de metodos em python, basicamente sao usados para que
-    o desenvolvedor nao saia usando nomes de metodos aleatorios. a ideia eh: se for retornar um valor use GET se for modificar 
-    um valor use SET no nome do metodo.
-    '''
-    '''
-    Outro recurso interressante sao os decorators use @property quando quiser chamar um metodo como
-    se fosse chamar um atributo privado tipo um get e @atributo.setter para setar um valor ao atributo privado
-    '''
-    # vou usar funcoes ao inves de metodos aqui apenas por conveniencia.
-
-    # Ambas as versoes abaixo fazem a mesma coisa, apenas escrito de forma diferente.
-
-    # def get_titular(self):
-    #   return self.__titular
-
-    @property
+    # Veja que estou chamando um metodo com o mesmo nome do atributo gracas aos decorators.
+    @property 
     def titular(self):
         return self.__titular
 
-    # def get_saldo(self):
-    #   return self.__saldo
-
-    @property
+    @property 
     def saldo(self):
         return self.__saldo
 
-    @property  # estou chamando um metodo com o mesmo nome do atributo.
+    @property  
     def limite(self):
         return self.__limite
 
-    # def set_limite(self, novo_limite):
-    #    self.__limite = novo_limite
-
-    @limite.setter  # estou chamando um metodo com o mesmo nome do atributo.
+    @limite.setter  
     def limite(self, novo_limite):
         self.__limite = novo_limite
+
+    # metodo da classe, nao precisa de objeto para ser usado.
+    @staticmethod  
+    def codigo_banco():
+        return '001'
+
+    @staticmethod
+    def listar_codigos_bancos():
+        return {'Banco do Brasil': '001',
+                'Caixa': '104',
+                'Bradesco': '237'
+                }
 
 
 # Instanciando objetos
@@ -102,9 +90,76 @@ c3 = Conta(3, 'Aline', 1500, 1000)
 
 # testando agora com os decorators acima, para retorno de funcao precisa
 # usar o print, se fosse um metodo nao precisaria.
+# ao usar @property nao precisa de () ao chamar.
 print(c1.titular)  # executando o @property
 print(c1.limite)  # executando o @property
 c1.limite = 2500  # executando o @limite.setter
 print(c1.limite)  # executando o @property
+print(Conta.codigo_banco())  # executando o metodo da classe ( staticmethod )
+print(Conta.listar_codigos_bancos()) # executando o metodo da classe ( staticmethod )
+
+
+
+
+
+
+
+# Codigo comentado abaixo nos principais pontos:
+'''
+class Conta:
+    
+    # metodo
+    def transferir(self, destino, valor_transf=0):
+        self.sacar(valor_transf)# veja que o self vale para o objeto instanciado atual
+        destino.depositar(valor_transf)
+        self.extrato() # veja que o self vale para o objeto instanciado atual
+        destino.extrato()
+
+    # Usando a nomeclatura get e set
+    
+    get e set nao fazem nada de especial, sao apenas convencoes de nomes de metodos em python, basicamente sao usados para que
+    o desenvolvedor nao saia usando nomes de metodos aleatorios. a ideia eh: se for retornar um valor use GET se for modificar 
+    um valor use SET no nome do metodo.
+    Outro recurso interressante sao os decorators use @property quando quiser chamar um metodo como
+    se fosse chamar um atributo privado tipo um get e @atributo.setter para setar um valor ao atributo privado
+    
+    # vou usar funcoes ao inves de metodos aqui apenas por conveniencia.
+    # Ambas as versoes abaixo fazem a mesma coisa, apenas escrito de forma diferente.
+
+    # def get_titular(self):
+    #   return self.__titular
+
+    @property
+    def titular(self):
+        return self.__titular
+    ----------------------------------------
+
+    # def get_saldo(self):
+    #   return self.__saldo
+
+    @property
+    def saldo(self):
+        return self.__saldo
+    ----------------------------------------
+
+    @property  # estou chamando um metodo com o mesmo nome do atributo.
+    def limite(self):
+        return self.__limite
+
+    # def set_limite(self, novo_limite):
+    #    self.__limite = novo_limite
+    ----------------------------------------
+
+    @limite.setter  # estou chamando um metodo com o mesmo nome do atributo.
+    def limite(self, novo_limite):
+        self.__limite = novo_limite
+
+    ----------------------------------------
+    @staticmethod  # metodo da classe, nao precisa de instancia
+    def codigo_banco():
+        return '001'
+
+'''
+
 
 
