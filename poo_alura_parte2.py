@@ -23,7 +23,7 @@ class Programa:                             # Classe mae.
 class Filme(Programa):                       # heranca
     def __init__(self, nome, ano, duracao):  # super traz as variaveis nome e ano da classe pai
         super().__init__(nome, ano)          # usando super nao precisa do self
-        self.duracao = duracao
+        self.duracao = duracao               # nesse bloco de codigo o conceito de extensao da classe pai eh usado
 
 
 class Serie(Programa):
