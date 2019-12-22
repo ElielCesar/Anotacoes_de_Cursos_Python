@@ -1,21 +1,21 @@
-class Programa:             # Classe mae.
+class Programa:                             # Classe mae.
     def __init__(self, nome, ano):
         self._nome = nome.title()
         self.ano = ano
         self._likes = 0
 
-    def dar_like(self):     # metodo
+    def dar_like(self):                     # metodo
         self._likes += 1
 
-    @property               # gettter
+    @property                               # gettter
     def nome(self):
         return self._nome
 
-    @nome.setter            # setter
+    @nome.setter                            # setter
     def nome(self, novo_nome):
         self._nome = novo_nome
 
-    @property               # funcao
+    @property                               # funcao
     def likes(self):
         return self._likes
 
