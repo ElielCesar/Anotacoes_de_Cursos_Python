@@ -1,0 +1,24 @@
+Para criar um snippet no vscode é necessario usar o modelo abaixo para deixar a classe da forma que vc quer.
+o atalho para editar seus snippets é ctrl+shift+p , digite snippet e escolha Configure User Snippets
+durante a edicao do seu snippet vc ja pode ir testando em tempo real em um arquivo para ver como vai ficando.
+
+"Classe Modelo":{
+		"prefix": "cm",
+		"body": [
+		"class Modelo:",
+		"",
+		"    def __init__(self):",
+		"        pass",
+		"",
+		"    def primeiro_metodo(self):",
+		"        pass",
+		"",
+		"    def segundo_metodo(self):",
+		"        pass",
+		"",
+		"    def __str__(self):",
+		"        return 'Retorno como string'",
+			],
+
+		"description": "Classe Modelo"
+	}
